@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     app_name: str = Field(default="RBAC API", description="Application name")
     database_url: str = Field(
-        default="postgresql+psycopg2://postgres:postgres@localhost:5432/rbac",
+        default="postgresql+psycopg://postgres:postgres@localhost:5432/rbac",
         description="SQLAlchemy-compatible database URL",
     )
     debug: bool = Field(default=True)

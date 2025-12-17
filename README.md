@@ -1,6 +1,7 @@
 # RBAC FastAPI Baseline
 
 Template backend menggunakan FastAPI + PostgreSQL untuk membangun API dengan fitur RBAC (Role Based Access Control) menggunakan prinsip clean architecture dan SOLID.
+> Catatan: baseline ini diuji pada Python 3.13.4.
 
 ## Struktur Proyek
 ```
@@ -19,13 +20,13 @@ app/
 File `rbac_schema.sql` menyertakan tabel-tabel roles, permissions, role_permissions, users, dan user_roles yang kompatibel dengan PostgreSQL.
 
 ## Menjalankan Aplikasi
-1. Buat virtualenv dan install dependensi:
+1. Buat virtualenv dan install dependensi (versi dipin supaya tersedia wheel Python 3.13 untuk pydantic-core dan psycopg binary):
    ```bash
    python -m venv .venv
    source .venv/bin/activate
    pip install -r requirements.txt
    ```
-2. Set variabel environment `DATABASE_URL` sesuai koneksi PostgreSQL (opsional, default sudah disediakan di `config.py`).
+2. Set variabel environment `DATABASE_URL` sesuai koneksi PostgreSQL (opsional, default sudah disediakan di `config.py` dengan driver `postgresql+psycopg`).
 3. Jalankan server:
    ```bash
    uvicorn app.main:app --reload
